@@ -1,0 +1,43 @@
+﻿@page "/AyatList"
+@if(LoddingPage==true)
+{
+    <div style="width: -webkit-fill-available; display: inline-flex;" class="d-lg-inline-flex">
+        <input type="text" @bind="@SearchString"  class="form-control" placeholder="اسم السوره">
+        <input type="button" @onclick="SerchMethod" value="ابحث" class="btn btn-secondary">
+    </div>
+    <!--  -->
+    <table style="width:-webkit-fill-available; margin-top: 10px;" class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">اسم السوره</th>
+                <th scope="col">نوعه</th>
+                <th scope="col">عدد الايات</th>
+                <th scope="col">قراءه السوره</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var i in Ayats)
+            {
+            <tr>
+                <th scope="row">@i.id</th>
+                <td>@i.name</td>
+                <td>@i.type</td>
+                <td>@i.array.Count()</td>
+                    <td><a href="/Aya/@i.id"><button class="btn btn-success">عرض</button></a></td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+  <div style="margin-top:15%;text-align:center;justify-content:center;">
+      <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+       </div>
+
+  </div>  
+}

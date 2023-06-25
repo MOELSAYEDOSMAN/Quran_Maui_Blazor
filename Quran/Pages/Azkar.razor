@@ -1,0 +1,29 @@
+﻿@page "/Azkar"
+@if(Lodding==true)
+{
+<h3>@azkar.title</h3>
+    @for (int i = 0; i < azkar.content.Length;i++)
+{
+
+        <div style="margin-top:18px" class="card">
+        <div class="card-header">
+                عدد التكرار:(@azkar.content[i].repeat)
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                    <p>@azkar.content[i].zekr</p>
+                    <footer class="blockquote-footer">@azkar.content[i].bless</footer>
+            </blockquote>
+        </div>
+        </div>
+    }
+}
+else
+{
+      <div style="margin-top:15%;text-align:center;justify-content:center;">
+      <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+       </div>
+
+       </div> 
+}

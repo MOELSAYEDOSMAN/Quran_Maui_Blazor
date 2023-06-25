@@ -1,0 +1,44 @@
+﻿<div style="background-color:green;" class="top-row ps-3 navbar navbar-dark">
+	<div style="background-color:green;" class="container-fluid">
+		<a class="navbar-brand" href="">Quran</a>
+		<button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
+</div>
+
+<div style="background-color:green;" class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+	<nav style="background-color:green;" class="flex-column">
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+				<span class="oi oi-home" aria-hidden="true"></span> الرئسيه
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="/AyatList" Match="NavLinkMatch.All">
+				<span class="oi oi-book" aria-hidden="true"></span> القرأن
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="/Azkar" Match="NavLinkMatch.All">
+				<span class="oi oi-book" aria-hidden="true"></span> اذكار الصباح والمساء
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="/Tasbiha" Match="NavLinkMatch.All">
+				<span class="oi oi-book" aria-hidden="true"></span> تسابيح
+			</NavLink>
+		</div>
+	</nav>
+</div>
+
+@code {
+	private bool collapseNavMenu = true;
+
+	private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+	private void ToggleNavMenu()
+	{
+		collapseNavMenu = !collapseNavMenu;
+	}
+}

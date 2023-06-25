@@ -1,0 +1,44 @@
+﻿@page "/Aya/{Id:int}"
+@if (lodding == true)
+{
+    <div style="display: flex; max-width: 100%; justify-content: space-between;">
+
+        
+        @if (Id == 1)
+        {
+            <button disabled class="btn btn-secondary disabled">السابق</button>
+        }
+        else
+        {
+            <button @onclick="PervAya" class="btn btn-secondary">السابق</button>
+        }
+
+        @if (Id == 114)
+        {
+            <button disabled class="btn btn-secondary disabled">التالي</button>
+        }
+        else
+        {
+            <button @onclick="NextAya" class="btn btn-secondary">التالي</button>
+        }
+
+    </div>
+    <div style="max-width: 100%;padding: 20px;text-align: center;">
+    <h2>@ayat.name</h2>    
+    </div>
+
+    <div style="max-width: 100%;padding: 20px;text-align: center;">
+        <h4 style="padding: inherit;">
+            @ayat.ar
+        </h4>
+    </div>
+}
+else
+{
+    <div style="margin-top:15%;text-align:center;justify-content:center;">
+        <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+        </div>
+
+    </div>
+}

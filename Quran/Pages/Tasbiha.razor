@@ -1,0 +1,12 @@
+﻿@page "/Tasbiha"
+
+@foreach(var i in TasbihaList)
+{
+    <div class="card" @onclick="() => ClickZaker(i.Id)" >
+        <h5 class="card-header">(@i.Id)</h5>
+        <div class="card-body">
+            <h5 class="card-title">@i.Text</h5>
+            <input type="button" @bind="@i.rebist" class="btn btn-primary">
+        </div>
+    </div>
+}
